@@ -1,9 +1,9 @@
 import unittest
-import greenhouse_functions
+import blackbox_greenhouse_functions
 
 class blackboxtest1(unittest.TestCase):
     def setUp(self):
-        self.adjusttemp = greenhouse_functions.adjust_temperature
+        self.adjusttemp = blackbox_greenhouse_functions.adjust_temperature
         self.currentTemp = 20
 
     def test_open_window(self):
