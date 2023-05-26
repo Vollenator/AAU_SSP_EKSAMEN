@@ -19,8 +19,5 @@ class blackboxtest1(unittest.TestCase):
         self.assertEqual("TypeError", self.adjusttemp(targetTemp, self.currentTemp))
 
 
-
-
-
 if __name__ == '__main__':
     unittest.main()
