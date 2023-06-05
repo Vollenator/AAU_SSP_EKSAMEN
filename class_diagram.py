@@ -58,10 +58,8 @@ class Actuator(Valve, Pump, Window):
         return [self.valve, self.pump, self.window]
 
 
-class ClimateControl():
+class ClimateControl(Sensor, Actuator):
     def __init__(self, desiredHumidity: int, desiredTemperature: int, desiredSoilMoistureLevel: int) -> None:
-        self.sensor = Sensor()
-        self.actuator = Actuator()
         self._desiredTemperature = desiredTemperature
         self._desiredHumidity = desiredHumidity
         self._desiredSoilMoistureLevel = desiredSoilMoistureLevel
@@ -94,9 +92,20 @@ class ClimateControl():
         self._desiredSoilMoistureLevel = desiredSoilMoistureLevel
 
 
-@dataclass
 class Vegetable:
-    """The desired values for a given vegetable"""
-    humidity: int
-    temperature: int
-    soilMoistureLevel: int
+    """The desired values for a given vegetable""" 
+    def __init__(self,humidity: int, temperature: int, soilMoistureLevel: int):
+        self.setTemperature = temperature
+        self.setHumidity = humidity
+        self.setSoilMoistureLevel = soilMoistureLevel
+
+    
+
+    def set_humidity(self, newHumidity: int) -> None:
+        self.setHumidity = newHumidity
+
+    def set_temperature(self, newTemperature: int) -> None:
+        self.setTemperature = newTemperature
+
+    def set_soil_moisture_level(self, newSoilMoistureLevel: int) -> None:
+        self.setSoilMoistureLevel = newSoilMoistureLevel
