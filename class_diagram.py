@@ -1,5 +1,3 @@
-from dataclasses import dataclass
-
 class TemperatureSensor():
     def read_data(self) -> int:
         return 10
@@ -98,8 +96,6 @@ class Vegetable:
         self.setTemperature = temperature
         self.setHumidity = humidity
         self.setSoilMoistureLevel = soilMoistureLevel
-
-    
 
     def set_humidity(self, newHumidity: int) -> None:
         self.setHumidity = newHumidity
